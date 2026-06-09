@@ -12,7 +12,8 @@ int creationgarage(){
 
 int menu(){
     int choix;
-    printf("===Bienvenu dans votre Garage===\n");
+    while(choix != 5){
+        printf("===Bienvenu dans votre Garage===\n");
     printf("Que voulez vous faire ?\n");
     printf("1.Ajouter une voiture a votre collection\n");
     printf("2.Supprimer une voiture de votre collection\n");
@@ -25,10 +26,17 @@ int menu(){
         case 1:
             initvoiture();
             break;
+
+        case 4:
+            affichergarage();
+            break;
     }
+    }
+    
     return 0;
 }
 
 int main(){
     creationgarage();
+    menu();
 }

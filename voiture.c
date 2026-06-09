@@ -32,7 +32,7 @@ int initvoiture(void){
 
     fflush(stdout);
 
-    affichervoiture(&v);
+    infosvoiture(&v);
     
     return 0;
 }

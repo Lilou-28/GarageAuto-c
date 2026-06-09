@@ -5,7 +5,7 @@
 
 int ajouterVoiture(voiture *v, voiture *garage[], int *nbvoiture, int *taille){
 
-    if (nbvoiture + 1 > *taille){
+    if (*nbvoiture + 1 > *taille){
         printf("Votre Garage est plein !");
     }else{
         garage[*nbvoiture] = v;
@@ -31,6 +31,10 @@ int initgarage()
     return 0;
 }
 
+int affichervoiture(voiture *v){
+    printf("Marque: %s , Modele : %s, Immatriculation : %s - %d - %s\n",v->marque, v->modele, v->immatriculation.lettre1, v->immatriculation.nombre, v->immatriculation.lettre2);
+}
+
 int affichergarage(voiture *garage[], int *nbvoiture){
     for(int i = 0;i < *nbvoiture; i++){
         printf("%d.",i+1);
@@ -38,8 +42,4 @@ int affichergarage(voiture *garage[], int *nbvoiture){
     }
 
     return 0;
-}
-
-int affichervoiture(voiture *v){
-    printf("Marque: %s , Modele : %s, Immatriculation : %s - %d - %s\n",v->marque, v->modele, v->immatriculation.lettre1, v->immatriculation.nombre, v->immatriculation.lettre2);
 }
