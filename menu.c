@@ -2,11 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>   
 #include <string.h>
+#include "garage.h"
+
+int creationgarage(){
+        printf("====Bienvenu dans GARAGE AUTO====\n");
+        printf("Nous allons commencer par créer votre garage..\n");
+        initgarage();
+}
 
 int menu(){
     int choix;
-
-    printf("---Bienvenu dans le Garage Auto---\n");
+    printf("===Bienvenu dans votre Garage===\n");
     printf("Que voulez vous faire ?\n");
     printf("1.Ajouter une voiture a votre collection\n");
     printf("2.Supprimer une voiture de votre collection\n");
@@ -24,5 +30,5 @@ int menu(){
 }
 
 int main(){
-    menu();
+    creationgarage();
 }
