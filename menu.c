@@ -7,7 +7,8 @@
 void affichermenu(void);
 
 void affichermenu(void) {
-    printf("\n===== Menu GarageAuto =====\n");
+    system("cls");
+    printf("\n===== GarageAuto =====\n");
     printf("1. Ajouter une voiture\n");
     printf("2. Retirer une voiture\n");
     printf("3. Afficher le garage\n");
