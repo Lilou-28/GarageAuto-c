@@ -3,22 +3,6 @@
 #include <stdlib.h>   
 #include <string.h>
 
-typedef struct 
-{
-    char lettre1[2];
-    int nombre;
-    char lettre2[2];
-}immatriculation;
-
-
-typedef struct {
-    char marque[20];
-    char modele[20];
-    immatriculation immatriculation;
-    int annee;
-    int kilometrage;
-    float prix;
-}voiture;
 
 int affichervoiture(voiture *v){
     printf("\n======= Infos de la voiture =======");
@@ -51,8 +35,4 @@ int initvoiture(){
     affichervoiture(&v);
     
     return 0;
-}
-
-int main(){
-    initvoiture();
 }
