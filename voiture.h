@@ -2,9 +2,9 @@
 #define VOITURE_H
 
 typedef struct {
-    char lettre1[2];
+    char lettre1[3];
     int nombre;
-    char lettre2[2];
+    char lettre2[3];
 } immatriculation;
 
 typedef struct {
@@ -17,6 +17,6 @@ typedef struct {
 } voiture;
 
 int initvoiture(void);
-int affichervoiture(voiture *v);
+int infosvoiture(voiture *v);
 
 #endif
