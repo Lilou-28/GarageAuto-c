@@ -16,7 +16,7 @@ typedef struct {
     float prix;
 } voiture;
 
-int initvoiture(void);
+voiture *initvoiture(void);
 int infosvoiture(voiture *v);
 
 #endif

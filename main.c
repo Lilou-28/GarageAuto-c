@@ -1,18 +1,29 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "voiture.h"
-
-static void afficherMenu(void){
-    printf("\n===== Menu GarageAuto =====\n");
-    printf("1. Creer et afficher une voiture\n");
-    printf("2. Quitter\n");
-    printf("Choix : ");
-}
+#include "garage.h"
+#include "menu.h"
 
 int main(void){
     int choix = 0;
+    int taille = 0;
+    int nbvoiture = 0;
+    voiture **garage = NULL;
+
+    printf("Combien de voitures max dans le garage ? ");
+    if (scanf("%d", &taille) != 1 || taille <= 0) {
+        printf("Taille invalide.\n");
+        return 1;
+    }
+
+    garage = malloc(taille * sizeof(voiture *));
+    if (garage == NULL) {
+        printf("Erreur allocation garage.\n");
+        return 1;
+    }
 
     do {
-        afficherMenu();
+        affichermenu();
         if (scanf("%d", &choix) != 1) {
             int c;
             while ((c = getchar()) != '\n' && c != EOF);
@@ -23,16 +34,32 @@ int main(void){
 
         switch (choix) {
             case 1:
-                initvoiture();
+            {
+                voiture *v = initvoiture();
+                if (v != NULL) {
+                    ajouterVoiture(v, garage, &nbvoiture, taille);
+                }
                 break;
+            }
             case 2:
+                supprimervoiture(garage,&nbvoiture);
+                break;
+            case 3:
+                affichergarage(garage, &nbvoiture);
+                break;
+            case 4:
                 printf("Au revoir.\n");
                 break;
             default:
                 printf("Choix invalide.\n");
                 break;
         }
-    } while (choix != 2);
+    } while (choix != 4);
+
+    for (int i = 0; i < nbvoiture; i++) {
+        free(garage[i]);
+    }
+    free(garage);
 
     return 0;
 }
