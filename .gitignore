@@ -1,0 +1,35 @@
+# Executables
+*.exe
+*.out
+*.app
+
+# Object and compiled files
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+
+# Build folders
+build/
+dist/
+bin/
+obj/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+*~
+
+# IDE / editor files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+Thumbs.db
+Desktop.ini
