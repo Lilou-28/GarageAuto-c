@@ -1,16 +1,35 @@
+#include "voiture.h"
 #include <stdio.h>
 #include <stdlib.h>   
 #include <string.h>
 
+typedef struct 
+{
+    char lettre1[2];
+    int nombre;
+    char lettre2[2];
+}immatriculation;
+
+
 typedef struct {
     char marque[20];
     char modele[20];
-    char immatriculation[10];
+    immatriculation immatriculation;
     int annee;
     int kilometrage;
     float prix;
 }voiture;
 
+int affichervoiture(voiture *v){
+    printf("\n======= Infos de la voiture =======");
+    printf("\nMarque :%19s", v->marque);
+    printf("\nModele :%19s", v->modele);
+    printf("\nImmatriculation :%2s - %d - %2s", v->immatriculation.lettre1, v->immatriculation.nombre, v->immatriculation.lettre2);
+    printf("\nAnnee :%d", v->annee);
+    printf("\nKilometrage :%d", v->kilometrage);
+    printf("\nPrix :%d", v->prix);
+    return 0;
+}
 
 int initvoiture(){
     voiture v;
@@ -19,7 +38,7 @@ int initvoiture(){
     printf("Entrez le modele de votre voiture:");
     scanf("%19s", &v.modele);
     printf("Entrez l'immatriculation de votre voiture(sous forme AB - 123 - CD):");
-    scanf("%2s - %d - %2s", &v.immatriculation);
+    scanf("%2s - %d - %2s", &v.immatriculation.lettre1, &v.immatriculation.nombre, &v.immatriculation.lettre2);
     printf("Entrez l'annee de votre voiture:");
     scanf("%d", &v.annee);
     printf("Entrez le kilometrage de votre voiture:");
@@ -29,5 +48,11 @@ int initvoiture(){
 
     fflush(stdout);
 
+    affichervoiture(&v);
+    
     return 0;
+}
+
+int main(){
+    initvoiture();
 }
