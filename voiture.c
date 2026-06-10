@@ -100,6 +100,7 @@ voiture *initvoiture(void){
         free(v);
         viderBuffer();
         return NULL;
+        system("cls");
     }
 
     fflush(stdout);
