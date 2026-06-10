@@ -25,6 +25,8 @@ int main(void){
         return 1;
     }
 
+    chargerGarage(garage, &nbvoiture, taille, "garage.txt");
+
     do {
         affichermenu();
         if (scanf("%d", &choix) != 1) {
@@ -70,6 +72,10 @@ int main(void){
                 break;
         }
     } while (choix != 4);
+
+    if (sauvegarderGarage(garage, nbvoiture, "garage.txt") == 0) {
+        printf("Garage sauvegarde dans garage.txt.\n");
+    }
 
     for (int i = 0; i < nbvoiture; i++) {
         free(garage[i]);
