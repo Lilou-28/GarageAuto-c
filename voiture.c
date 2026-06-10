@@ -10,7 +10,6 @@ static void viderBuffer(void){
 }
 
 int infosvoiture(voiture *v){
-    system("cls");
     printf("\n======= Infos de la voiture =======\n");
     printf("Marque : %s\n", v->marque);
     printf("Modele : %s\n", v->modele);
@@ -100,8 +99,8 @@ voiture *initvoiture(void){
         printf("Prix invalide.\n");
         free(v);
         viderBuffer();
-        return NULL;
         system("cls");
+        return NULL;
     }
 
     fflush(stdout);
