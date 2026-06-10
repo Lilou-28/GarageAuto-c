@@ -41,7 +41,12 @@ int main(void){
                 system("cls");
                 voiture *v = initvoiture();
                 if (v != NULL) {
-                    ajouterVoiture(v, garage, &nbvoiture, taille);
+                    int result = ajouterVoiture(v, garage, &nbvoiture, taille);
+                    if (result == -1) {
+                        printf("Appuyez sur Entrée pour continuer...");
+                        getchar();
+                        getchar();
+                    }
                 }
                 break;
             }
