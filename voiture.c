@@ -10,6 +10,7 @@ static void viderBuffer(void){
 }
 
 int infosvoiture(voiture *v){
+    system("cls");
     printf("\n======= Infos de la voiture =======\n");
     printf("Marque : %s\n", v->marque);
     printf("Modele : %s\n", v->modele);
@@ -29,13 +30,13 @@ voiture *initvoiture(void){
     }
 
     printf("Entrez la marque de votre voiture : ");
-    if (scanf("%19s", v->marque) != 1) {
+    if (scanf(" %19[^\n]", v->marque) != 1) {
         printf("Marque invalide.\n");
         free(v);
         return NULL;
     }
     printf("Entrez le modele de votre voiture : ");
-    if (scanf("%19s", v->modele) != 1) {
+    if (scanf(" %19[^\n]", v->modele) != 1) {
         printf("Modele invalide.\n");
         free(v);
         return NULL;

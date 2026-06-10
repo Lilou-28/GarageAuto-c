@@ -10,8 +10,9 @@ int main(void){
     int nbvoiture = 0;
     voiture **garage = NULL;
     
+    system("cls");
     printf("============= BIENVENUE =============\n");
-    printf("Nous allons d'abord créer votre garage..\n");
+    printf("Nous allons d'abord creer votre garage..\n");
     printf("Combien de voitures max dans le garage ? ");
     if (scanf("%d", &taille) != 1 || taille <= 0) {
         printf("Taille invalide.\n");
@@ -49,8 +50,10 @@ int main(void){
                 supprimervoiture(garage,&nbvoiture);
                 break;
             case 3:
-                system("cls");
                 affichergarage(garage, &nbvoiture);
+                printf("\nAppuyez sur Entrée pour revenir au menu...");
+                getchar();
+                getchar();
                 break;
             case 4:
                 system("cls");
